@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun userChoice(indx: Int) {
+        if (indx in userPlayer || indx in computerPlayer) {
+            // Toast for already chosen
+            Toast.makeText(this, "This square is already chosen!", Toast.LENGTH_SHORT)
+                .show()
+            return
         disableSquares(true)
         userPlayer.add(indx)
         chosenSquare(indx, R.drawable.player_one_mark, Color.BLUE)
